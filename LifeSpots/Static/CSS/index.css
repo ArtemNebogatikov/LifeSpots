@@ -1,0 +1,73 @@
+﻿/* Свойства стиля элемента. Подробнее о них в модуле по CSS */
+.video-container {
+    display: inline-block;
+    padding-left: 1%;
+    padding-top: 1%;
+}
+.bordered{
+    display:inline-block;
+}
+
+.navbar {
+    padding-left: 15%;
+}
+.navbar p:hover{
+    color:white;
+}
+
+header {
+    color: black;
+    padding-left: 1%;
+    padding-top: 0.5%;
+}
+.header-index{
+    color:blue;
+}
+header, footer, .video-container, body{
+    background-color: forestgreen;
+}
+
+footer {
+    bottom: 0;
+    font-size: medium;
+    color: blue;
+    line-height: 55%;
+    padding-left: 1%;
+}
+
+aside {
+    height: 107%; /* Высота в полный размер. Этот параметр можно убрать, если вы хотите выставлять высоту автоматически */
+    width: 13%;
+    position: absolute; /* Фиксированная позиция сайд-бара. Так он будет оставаться на месте при скроллинге */
+    z-index: 1; /* Сайд-бар будет поверх остальных элементов */
+    top: 0; /* Сайдбар будет в самой верхней части страницы */
+    left: 0;
+    background-color: #111; /* Черный цвет фона (задан в виде кода) */
+    overflow-x: hidden; /* Отключаем горизонтальную прокрутку */
+    padding-top: 2%;
+    font-size: large;
+    position:absolute;
+}
+
+body {
+    padding-left: 14%;
+}
+header, footer, aside, body, .navbar, .video-container, .bordered, .search_text_label {
+    font-family: "Helvetica 65 Medium", sans-serif;
+}
+.search_input{
+    margin-left: 1%;
+    width: 50%;
+    margin-bottom: 1rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 400;
+}
+.search_input:focus{
+}
+.search{
+    margin-left:1%;
+}
+.search_text_label{
+    color:blue;
+}
