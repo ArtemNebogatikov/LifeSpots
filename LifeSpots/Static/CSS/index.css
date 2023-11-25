@@ -28,6 +28,8 @@ header, footer, .video-container, body{
 }
 
 footer {
+    position:fixed;
+    left:14%;
     bottom: 0;
     font-size: medium;
     color: blue;
@@ -63,11 +65,21 @@ header, footer, aside, body, .navbar, .video-container, .bordered, .search_text_
     font-size: 1rem;
     font-weight: 400;
 }
-.search_input:focus{
+.search:focus{
 }
 .search{
     margin-left:1%;
 }
-.search_text_label{
-    color:blue;
+.review-cotainer,.review-button{
+    display:inline-block;
+    margin-top:0.5em;
+    padding-left: 1%;
+    padding-top: 1%;
+}
+
+.review-text {
+    display: block;
+    margin-top: 0.5em;
+    padding-left: 1%;
+    padding-top: 1%;
 }

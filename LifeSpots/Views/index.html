@@ -4,7 +4,29 @@
     <meta charset="UTF-8">
     <title>LifeSpots</title>
     <link href="../Static/CSS/index.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/Static/JS/index.js"></script>
+    <script>
+        //checkAge();
+
+        handleSession();
+
+        sessionLog();
+
+        setTimeout(() =>
+            alert("Нравится LifeSpot? " + '\n' + "Подпишитесь на наш Instagram @lifespot999!"),
+            30000);
+        const inputParseFunction = function () {
+            return document.getElementsByTagName('input')[0].value.toLowerCase();
+        }
+    </script>
 </head>
+<aside id="sidebar">
+    <div class="navbar">
+        <a href="/"><p>Все трансляции</p></a>
+        <a href="/about.html"><p>О проекте</p></a>
+        <a href="/testing.html"><p>Тестирование</p></a>
+    </div>
+</aside>
 <body>
     <header class="header-index">
         <!--Заголовок страницы-->
@@ -13,15 +35,10 @@
         <p>Покажем, что происходит прямо сейчас</p>
     </header>
     <div class="search">
-        <label class="search_text_label" for="search">Поиск</label>
-        <input class="search_input" type="text" name="search"/>
+        <input type="text" oninput="
+    filterOutput();
+ " size=50%>
     </div>
-    <aside>
-        <div class="navbar">
-            <a href="/"><p>Все трансляции</p></a>
-            <a href="/"><p>О проекте</p></a>
-        </div>
-    </aside>
     <div class="bordered">
         <div class="video-container">
             <iframe width="500" height="315" src="https://www.youtube.com/embed/srlpC5tmhYs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -36,9 +53,6 @@
             <h3 class="video-title">Лондон, автобусный маршрут</h3>
         </div>
     </div>
-    <footer>
-        <p>LifeSpots - все права защищены</p>
-        <p>Связаться с нами: contact@LifeSpots.ru</p>
-    </footer>
 </body>
+<!--FOOTER-->
 </html>
