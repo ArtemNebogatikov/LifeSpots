@@ -1,15 +1,59 @@
-﻿function getReview() {
-    let review = {}
+﻿function Comment() {
+    this.author = prompt("Как вас зовут?");
+    if (this.author == null) {
+        this.empty = true;
+        return
+    }
+    this.text = prompt("Напишите свой отзыв")
+    if (this.text == null) {
+        this.empty = true;
+        return
+    }
+    this.date = new Date().toLocaleDateString()
+}
 
-    review["userName"] = prompt("Как вас зовут?")
-    review["comment"] = prompt("Напишите свой отзыв")
-    review["date"] = new Date().toLocaleDateString()
-    writeReview(review)
+function getReview() {
+    let comment = new Comment();
+    if (comment.empty) {
+        return
+    }
+
+    let enableLikes = confirm('Разрешить оценить ваш отзыв?')
+
+    if (enableLikes) {
+        let review = Object.create(comment)
+        review.rate = 0
+        writeReview(review)
+    }
+    else {
+        writeReview(comment)
+    }
 }
 const writeReview = review => {
+    let likeCounter = '';
+
+    if (review.hasOwnProperty('rate')) {
+        let commentId = Math.random();
+
+        likeCounter += '<button id ="' + commentId + '"style = "border: none" onClick="addLike(this.id)">' + `❤️ ${review.rate}</button>`;
+    }
     document.getElementsByClassName('reviews')[0].innerHTML += '    <div class="review-text">\n' +
-        `<p> <i> <b>${review['userName']}</b>  ${review['date']}</i></p>` +
-        `<p>${review['comment']}</p>` +
+        `<p> <i> <b>${review['author']}</b>  ${review['date']} ` + ` ` + ` ${likeCounter}</i ></p >` +
+        `<p>${review['text']}</p>` +
         '</div>';
+}
+
+function addLike(id) {
+    let element = document.getElementById(id);
+
+    let array = element.innerText.split(' ');
+
+    let resultNum = parseInt(array[array.length - 1], 10);
+
+    resultNum += 1;
+
+    array[array.length - 1] = `${resultNum}`;
+
+    element.innerText = array.join(' ');
 }
 

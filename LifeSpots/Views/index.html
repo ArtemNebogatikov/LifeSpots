@@ -3,30 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>LifeSpots</title>
-    <link href="../Static/CSS/index.css" rel="stylesheet" type="text/css" />
+    <link href="/Static/CSS/index.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="/Static/JS/index.js"></script>
     <script>
-        //checkAge();
+        handleSession(logger, checker);
 
-        handleSession();
-
-        sessionLog();
-
-        setTimeout(() =>
-            alert("Нравится LifeSpot? " + '\n' + "Подпишитесь на наш Instagram @lifespot999!"),
-            30000);
         const inputParseFunction = function () {
             return document.getElementsByTagName('input')[0].value.toLowerCase();
         }
     </script>
 </head>
-<aside id="sidebar">
-    <div class="navbar">
-        <a href="/"><p>Все трансляции</p></a>
-        <a href="/about.html"><p>О проекте</p></a>
-        <a href="/testing.html"><p>Тестирование</p></a>
-    </div>
-</aside>
+<!--SIDEBAR-->
 <body>
     <header class="header-index">
         <!--Заголовок страницы-->
